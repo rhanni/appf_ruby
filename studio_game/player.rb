@@ -21,6 +21,11 @@ class Player
         puts "#{@name} got w00ted!"
         @health = @health +15
     end
+
+    def score
+        @score = @name.length + @health
+    end
+    
 end
 
 
@@ -32,4 +37,5 @@ if __FILE__ == $0
   puts player.health
   player.blam
   puts player.health
+  puts player.score
 end
