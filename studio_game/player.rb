@@ -5,7 +5,7 @@ class Player
 
     def initialize(name, health=100)
        @name = name.capitalize
-       @health = health 
+       @health = health
     end
 
     def to_s
@@ -25,8 +25,13 @@ class Player
     def score
         @score = @name.length + @health
     end
+
     def strong?
       @health > 100
+    end
+
+    def <=>(other)
+        other.score <=> score
     end
 end
 
