@@ -22,6 +22,11 @@ describe TreasureTrove do
     expect(TreasureTrove::TREASURES.size).to eq(6)
   end
 
+  it "returns a random treasure" do
+    treasure = TreasureTrove.random
+    expect(TreasureTrove::TREASURES).to include(treasure)
+  end
+
   it "has a pie worth 5 points" do
     expect(TreasureTrove::TREASURES[0]).to eq(Treasure.new(:pie, 5))
   end

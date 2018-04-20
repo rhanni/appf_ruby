@@ -1,6 +1,7 @@
 require_relative 'player'
 require_relative 'die'
 require_relative 'game_turn'
+require_relative 'treasure_trove'
 
 class Game
     attr_accessor :name, :players_array
@@ -15,11 +16,17 @@ class Game
     end
 
     def play(rounds)
+        treasures = TreasureTrove::TREASURES
+        puts "\nThere are #{treasures.length} treasures to be found:"
+        treasures.each do |treasure|
+            puts "A #{treasure.name} is worth #{treasure.points} points\n\n"
+        end
         1.upto(rounds) do |iter|
             puts "------ Round number: #{iter} ------"
             @players_array.each do |player|
                 GameTurn.take_turn(player)
-                puts player
+                #prints out player name and health....annoying
+                #puts player
             end
         end
     end
