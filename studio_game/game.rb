@@ -42,7 +42,7 @@ class Game
         puts "\n -------RANKINGS-------\n"
         @players_array.sort.each do |player|
             formatted_name = player.name.ljust(20, '.')
-            puts "\n #{formatted_name} #{player.score}\n"
+            puts "\n #{formatted_name} Total Score: #{player.score}\n"
         end
     end
 
