@@ -43,6 +43,9 @@ class Game
         @players_array.sort.each do |player|
             formatted_name = player.name.ljust(20, '.')
             puts "\n #{formatted_name} Total Score: #{player.score}\n"
+            player.each_found_treasure do |treasure|
+                puts "#{treasure.name.capitalize} worth #{treasure.points}"
+            end
         end
     end
 
