@@ -20,3 +20,5 @@ loop do
         puts "Enter a number of rounds or type 'quit'"
     end
 end
+
+knuckleheads.save_high_scores("high_scores.txt")

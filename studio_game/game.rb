@@ -60,4 +60,13 @@ class Game
             add_player(player)
         end
     end
+
+    def save_high_scores(output_file)
+        File.open(output_file, "w") do |file|
+            file.puts "\n#{name.ljust(20, ".")} High Scores:"
+            @players_array.each do |player|
+                file.puts "\n#{player.name.ljust(20,".")} #{player.score}"
+            end
+        end
+    end
 end
